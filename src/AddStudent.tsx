@@ -43,12 +43,14 @@ export interface Istudent  {
     })
       .then((response) => response.json())
       .then((students) => {
-        console.log(students)
         setStudent(students.data);
+        console.log(students.data)
+        window.location.href = "/"; 
       });
   }
 
   return (
+    <div style={{ margin: 100 }}>
     <Form form={form} onFinish={addStudent}>
       <Form.Item
         {...layout} name="name" label="Name" rules={[ { required: true, message: "Please input your username!", }, ]} >
@@ -57,7 +59,7 @@ export interface Istudent  {
       <Form.Item label="BirthDay" name='birthday' {...layout}>
         <DatePicker/>
       </Form.Item>
-      <Form.Item {...layout} label="Email" name="email" rules={[ { type: "email", }, ]} >
+      <Form.Item {...layout} label="Email" name="email" rules={[ { type: "email",message: "Please input correct email format!" }, ]} >
         <Input/>
       </Form.Item>
       <Form.Item name='rank' label="Rank" {...layout}>
@@ -74,6 +76,7 @@ export interface Istudent  {
         </Button>
       </Form.Item>
     </Form>
+    </div>
   );
 };
 
