@@ -82,9 +82,9 @@ const onCancel = () => {
       </Form.Item>
       <Form.Item name='rank' label="Rank" {...layout} rules={[ { required: true}]}>
         <Select  >
-          <Option value="good">Good</Option>
-          <Option value="quite">Quite</Option>
-          <Option value="bad">Bad</Option>
+          <Option value="Good">Good</Option>
+          <Option value="Quite">Quite</Option>
+          <Option value="Bad">Bad</Option>
         </Select>
       </Form.Item>
 

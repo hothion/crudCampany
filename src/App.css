@@ -1,4 +1,4 @@
-
+@import '~antd/dist/antd.css';
 .App {
   text-align: center;
 }
@@ -36,4 +36,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+/* edit */
+.titleedit,.titleDetail{
+  margin-left: 425px;
+  font-size: 2.8em;
+}
+.containerEdit,.containerList,.containerDetail{
+  margin: 100px;
 }

@@ -43,7 +43,7 @@ const [visible, setIsModalVisible] = useState(false);
 
 const handleOk = () => {
   setIsModalVisible(false);
-  window.location.href = "/detailstudent/" + id
+  window.location.href = "/detail/" + id
   message.success("Edit a student successfully!");
 };
 
@@ -85,8 +85,8 @@ const onCancel = () => {
                 })
       };
   return (
-    <div style={{ margin: 100 }}>
-       <h1 style={{marginLeft: "425px", fontSize: "2.8em"}}>Edit student</h1>
+    <div className="containerEdit">
+       <h1 className="titleedit">Edit student</h1>
     {
       state.isLoading ? <></> : 
       
@@ -109,16 +109,16 @@ const onCancel = () => {
         </Select>
       </Form.Item>
 
-      <Form.Item {...tailLayout}>
+      <Form.Item {...tailLayout} >
           <Space>
-        <Button type="primary" htmlType="submit">
+        <Button type="primary" htmlType="submit" disabled={!form.isFieldsTouched(false)}>
           Update
         </Button>
         <Modal  title="Edit a student"
         visible={visible}
         onCancel={onCancel}
         onOk={handleOk}>
-        <p>You are sure to update</p>
+        <p>Are you sure to update</p>
         </Modal>
         <Button type="primary" danger onClick={cancel}>Cancel</Button>
         </Space>
